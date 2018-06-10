@@ -5,7 +5,7 @@ import org.fluentlenium.core.wait.FluentWait;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-public class GenericPage extends FluentPage {
+class GenericPage extends FluentPage {
 
     private static final int DEFAULT_TIMEOUT_IN_SEC = 30;
 
