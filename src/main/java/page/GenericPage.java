@@ -25,8 +25,16 @@ class GenericPage extends FluentPage {
     @FindBy(css = ".alert")
     private FluentWebElement errorNotification;
 
+    @FindBy(id = "create_account_error")
+    private FluentWebElement createAccountError;
+
     public MainPage verifyThatErrorMessageAppeared(String errorMessage) {
-        await().until(errorNotification).containsText(errorMessage);
+        await().until(errorNotification).textContent().contains(errorMessage);
+        return mainPage;
+    }
+
+    public MainPage verifyThatCreateAccountErrorAppeared() {
+        await().until(createAccountError).displayed();
         return mainPage;
     }
 

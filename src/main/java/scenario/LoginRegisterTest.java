@@ -34,7 +34,8 @@ public class LoginRegisterTest extends CustomFluentDriver {
                 .clickSignInLink()
                 .setEmailToCreateAccount(email)
                 .clickCreateAccountButton()
-                .verifyThatErrorMessageAppeared("account using this email address has already been registered");
+                .verifyThatCreateAccountErrorAppeared()
+                .veriyThatUserIsLoggedOut();
     }
 
     @Test

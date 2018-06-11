@@ -8,7 +8,7 @@ public class AuthenticationPage extends GenericPage {
 
     @Override
     public void isAt() {
-        await().until(signInButton).isClickable();
+        await().until(signInButton).clickable();
     }
 
     @Page
@@ -33,7 +33,7 @@ public class AuthenticationPage extends GenericPage {
     private FluentWebElement signInButton;
 
     public AuthenticationPage setEmailToCreateAccount(String email) {
-        this.emailCreateInput.text(email);
+        this.emailCreateInput.fill().withText(email);
         return this;
     }
 
@@ -43,12 +43,12 @@ public class AuthenticationPage extends GenericPage {
     }
 
     public AuthenticationPage setEmailToLogin(String email) {
-        this.emailLoginInput.text(email);
+        this.emailLoginInput.fill().withText(email);
         return this;
     }
 
     public AuthenticationPage setPasswordToLogin(String password) {
-        this.passwordInput.text(password);
+        this.passwordInput.fill().withText(password);
         return this;
     }
 

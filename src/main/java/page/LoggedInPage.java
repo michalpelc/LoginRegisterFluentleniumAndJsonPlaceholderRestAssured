@@ -12,7 +12,7 @@ public class LoggedInPage extends GenericPage{
     private FluentWebElement logOutButton;
 
     public LoggedInPage verifyThatUserIsLoggedIn() {
-        await().until(logOutButton).isDisplayed();
+        await().until(logOutButton).displayed();
         return this;
     }
 

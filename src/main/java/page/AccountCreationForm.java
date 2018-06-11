@@ -15,7 +15,7 @@ public class AccountCreationForm extends GenericPage {
 
     @Override
     public void isAt() {
-        await().until(personalInfoGenderCheckbox).isClickable();
+        await().until(personalInfoGenderCheckbox).clickable();
     }
 
     @Page
@@ -77,29 +77,29 @@ public class AccountCreationForm extends GenericPage {
     private FluentWebElement registerButton;
 
     public AccountCreationForm fillAccountCreationForm(String email, String password) {
-        await().until(personalInfoGenderCheckbox).isClickable();
+        await().until(personalInfoGenderCheckbox).clickable();
         personalInfoGenderCheckbox.click();
-        personalInfoFirstNameInput.text(randomValue);
-        personalInfoLastNameInput.text(randomValue);
-        personalInfoEmailInput.text(email);
-        personalInfoPasswordInput.text(password);
-        addressFirstNameInput.text(randomValue);
-        addressLastNameInput.text(randomValue);
-        addressCompanyInput.text(randomValue);
-        addressAddressInput.text(randomValue);
-        addressCityInput.text(randomValue);
+        personalInfoFirstNameInput.fill().withText(randomValue);
+        personalInfoLastNameInput.fill().withText(randomValue);
+        personalInfoEmailInput.fill().withText(email);
+        personalInfoPasswordInput.fill().withText(password);
+        addressFirstNameInput.fill().withText(randomValue);
+        addressLastNameInput.fill().withText(randomValue);
+        addressCompanyInput.fill().withText(randomValue);
+        addressAddressInput.fill().withText(randomValue);
+        addressCityInput.fill().withText(randomValue);
         selectFirstElementFromDropdown(addressStateSelect);
-        addressPostcodeInput.text(randomNumeric(5));
+        addressPostcodeInput.fill().withText(randomNumeric(5));
         selectFirstElementFromDropdown(addressCountrySelect);
-        addressAdditionalInformationInput.text(randomValue);
-        addressHomeNumberInput.text(randomNumeric(5));
-        addressMobilePhoneInput.text(randomNumeric(5));
-        addressAliasInput.text(randomValue);
+        addressAdditionalInformationInput.fill().withText(randomValue);
+        addressHomeNumberInput.fill().withText(randomNumeric(5));
+        addressMobilePhoneInput.fill().withText(randomNumeric(5));
+        addressAliasInput.fill().withText(randomValue);
         return this;
     }
 
     public LoggedInPage submitAccountCreationForm() {
-        await().until(registerButton).isClickable();
+        await().until(registerButton).clickable();
         registerButton.click();
         return loggedInPage;
     }

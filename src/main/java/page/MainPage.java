@@ -10,7 +10,7 @@ public class MainPage extends GenericPage {
 
     @Override
     public void isAt() {
-        await().until(signInLink).isClickable();
+        await().until(signInLink).clickable();
     }
 
     @Page
@@ -25,7 +25,7 @@ public class MainPage extends GenericPage {
     }
 
     public void veriyThatUserIsLoggedOut() {
-        await().until(signInLink).isDisplayed();
+        await().until(signInLink).displayed();
     }
 
 }
