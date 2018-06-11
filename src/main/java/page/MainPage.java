@@ -14,14 +14,14 @@ public class MainPage extends GenericPage {
     }
 
     @Page
-    private LoginRegisterForm loginRegisterForm;
+    private AuthenticationPage authenticationPage;
 
     @FindBy(css = ".login")
     private FluentWebElement signInLink;
 
-    public LoginRegisterForm clickSignInLink() {
+    public AuthenticationPage clickSignInLink() {
         signInLink.click();
-        return loginRegisterForm;
+        return authenticationPage;
     }
 
     public void veriyThatUserIsLoggedOut() {
